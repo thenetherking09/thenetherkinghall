@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive of the Hellish Souls - The Netherking's Hall</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body class="gallery-body">
+    <div class="bg-veil"></div>
+    <canvas id="particle-canvas"></canvas>
+    <div id="occult-cursor"></div>
+    <audio id="bg-audio" loop src="bg/ambient-drone.mp3"></audio>
+
+    <div id="global-controls">
+        <button id="toggle-audio" class="interactive">🔇 SEAL AUDIO</button>
+        <button id="open-grimoire" class="interactive">📖 GRIMOIRE</button>
+    </div>
+
+    <div id="grimoire-sidebar" class="hidden">
+        <div class="grimoire-header">
+            <h3>BOUND SOULS (<span id="soul-count">0</span>/20)</h3>
+            <button id="close-grimoire" class="interactive">✕</button>
+        </div>
+        <div id="grimoire-grid"></div>
+        <button id="pact-initiation" class="interactive">INITIATE PACT (EXPORT)</button>
+    </div>
+
+    <div id="gallery-wrapper">
+        <header class="gallery-header">
+            <a href="index.html" id="back-to-nexus" class="interactive">← RETURN TO NEXUS</a>
+            <h1 id="main-title" data-text="ARCHIVE OF THE HELLISH SOULS">∆‡Ω⚚⊗ ‡⚚Ω∆</h1>
+            <p id="lore-subtitle">Select a seal to view its contents.</p>
+        </header>
+
+        <main id="folder-view-container">
+            </main>
+
+        <main id="open-archive-container" class="hidden">
+            <div class="archive-toolbar">
+                <button id="close-archive" class="interactive">← CLOSE SEAL</button>
+                <h2 id="current-folder-name">FOLDER NAME</h2>
+                <input type="text" id="archive-search" placeholder="Search Soul ID (e.g., 5)...">
+            </div>
+            <div id="archive-grid">
+                </div>
+        </main>
+    </div>
+
+    <div id="theater-modal" class="hidden">
+        <div id="theater-overlay"></div>
+        <button id="theater-close" class="interactive">✕</button>
+        
+        <div id="theater-content">
+            <button id="theater-prev" class="theater-nav interactive">‹</button>
+            <div id="theater-image-wrapper">
+                <img id="theater-image" src="" alt="Bound Soul">
+                <div id="theater-metadata">
+                    <div id="theater-metadata-text">
+                        <span id="meta-name">...</span>
+                        <span id="meta-desc">Loading metadata...</span>
+                        <span id="meta-integrity">INTEGRITY: 100%</span>
+                    </div>
+                    <div class="theater-buttons">
+                        <button id="bind-soul-btn" class="interactive">BIND SOUL</button>
+                        <button id="send-telegram-btn" class="interactive">SEND TO TELEGRAM</button>
+                    </div>
+                </div>
+            </div>
+            <button id="theater-next" class="theater-nav interactive">›</button>
+        </div>
+        <div id="swipe-hint">Swipe to navigate</div>
+    </div>
+
+    <script src="js/global.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+                </html>
+                                                    

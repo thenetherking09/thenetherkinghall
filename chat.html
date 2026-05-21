@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messenger of Netherworld - The Netherking's Hall</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+<body class="oracle-body">
+    <div class="bg-veil"></div>
+    <canvas id="particle-canvas"></canvas>
+    <div id="occult-cursor"></div>
+    <audio id="bg-audio" loop src="bg/ambient-drone.mp3"></audio>
+
+    <div id="global-controls">
+        <button id="open-grimoire" class="interactive">👁 GRIMOIRE</button>
+        <button id="toggle-audio" class="interactive">🔇 AUDIO</button>
+        <button id="open-relics" class="interactive">📜 RELICS</button>
+    </div>
+
+    <div id="relics-sidebar" class="hidden">
+        <div class="sidebar-header">
+            <h3>SAVED RELICS</h3>
+            <button id="close-relics" class="close-btn">✕</button>
+        </div>
+        <div id="relics-list"></div>
+    </div>
+
+    <div id="oracle-wrapper">
+        <header class="oracle-header">
+            <a href="index.html" id="back-to-nexus">← RETURN TO NEXUS</a>
+            <h1 id="main-title" data-text="THE ORACLE PORTAL">∆‡Ω⚚⊗ ‡⚚</h1>
+            <p>Enter the Perchance portals to generate, then bring your visions here to save or send to the Netherking.</p>
+        </header>
+
+        <div id="mode-selector" style="display: flex; gap: 10px; justify-content: center; padding: 15px; background: rgba(0,0,0,0.8); border-top: 1px solid var(--blood-red); border-bottom: 1px solid var(--blood-red);">
+            <button class="mode-btn" data-mode="story" style="background: var(--blood-red); color: #fff; border: 1px solid #fff; padding: 10px 20px; cursor: pointer; font-family: var(--font-heading); transition: 0.3s; border-radius: 3px; font-weight: bold;">📖 STORY PORTAL</button>
+            <button class="mode-btn" data-mode="rp" style="background: #111; color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 10px 20px; cursor: pointer; font-family: var(--font-heading); transition: 0.3s; border-radius: 3px; font-weight: bold;">⚔️ ROLEPLAY PORTAL</button>
+            <button class="mode-btn" data-mode="image" style="background: #111; color: #aaa; border: 1px solid #555; padding: 10px 20px; cursor: pointer; font-family: var(--font-heading); transition: 0.3s; border-radius: 3px; font-weight: bold;">👁️ IMAGE PORTAL</button>
+        </div>
+
+        <main id="chat-container">
+            <div id="chat-log">
+                </div>
+        </main>
+
+        <footer id="chat-input-area" style="display: flex; flex-direction: column; gap: 10px; padding: 15px; background: #0a0a0a; border-top: 1px solid var(--blood-red);">
+            <div style="font-size: 0.75rem; color: #888; text-align: center; font-style: italic;">
+                Paste generated content, upload an image, or pull an archive (e.g., "otm 1")
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button id="attach-btn" class="interactive" style="background: #111; color: var(--accent-gold); border: 1px solid #333; padding: 10px 15px; cursor: pointer; border-radius: 4px; font-size: 1.2rem;" title="Upload Image">📎</button>
+                <input type="file" id="oracle-file-upload" accept="image/png, image/jpeg, image/webp" style="display: none;">
+                
+                <textarea id="prompt-box" placeholder="Offer your text to the Oracle..." style="flex: 1; background: #000; color: #eee; border: 1px solid #333; padding: 10px; border-radius: 4px; resize: none; font-family: var(--font-body);"></textarea>
+                
+                <button id="send-btn" class="interactive" style="background: var(--blood-red); color: #fff; border: 1px solid #ff3333; padding: 10px 20px; cursor: pointer; font-family: var(--font-heading); border-radius: 4px;">SUBMIT</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/global.js"></script>
+    <script src="js/oracle-core.js"></script>
+</body>
+</html>

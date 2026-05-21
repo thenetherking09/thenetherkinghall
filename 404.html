@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Lost Soul</title>
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+        body { 
+            display: flex; flex-direction: column; align-items: center; 
+            justify-content: center; height: 100vh; text-align: center; 
+            overflow: hidden;
+        }
+        h1 { 
+            color: var(--blood-red); font-family: var(--font-heading); 
+            font-size: clamp(3rem, 8vw, 5rem); letter-spacing: 5px; 
+            margin-bottom: 10px; text-shadow: 0 0 20px rgba(138, 3, 3, 0.5);
+        }
+        p { color: #aaa; font-size: 1rem; margin-bottom: 40px; }
+        a.return-btn { 
+            color: var(--accent-gold); text-decoration: none; font-size: 1.2rem; 
+            border: 1px solid var(--accent-gold); padding: 12px 25px; 
+            border-radius: 4px; transition: 0.3s; font-family: var(--font-heading);
+        }
+        a.return-btn:hover { background: var(--accent-gold); color: #000; }
+    </style>
+</head>
+<body class="page-bg">
+    <canvas id="particle-canvas"></canvas>
+    <div id="occult-cursor"></div>
+    
+    <h1>404</h1>
+    <p>You have wandered into the void. This soul cannot be found.</p>
+    <a href="index.html" class="return-btn">RETURN TO NEXUS</a>
+
+    <script src="js/global.js"></script>
+</body>
+</html>

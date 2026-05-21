@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Marketplace</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/marketplace.css">
+</head>
+<body>
+
+    <div class="header-box">
+        <h1>The Marketplace</h1>
+        <p>Procure rarities or offer your own goods to the realm.</p>
+    </div>
+
+    <div class="grid">
+        <div class="item-card">
+            <h3>Custom Lore Generation</h3>
+            <p>A hand-crafted 5-page lore document tailored to your desires.</p>
+            <div class="price"><span class="discount">$50</span> $35</div>
+            <button class="inquire-btn" onclick="window.location.href='contact.html'">Inquire</button>
+        </div>
+        <div class="item-card">
+            <h3>Exclusive Image Archive</h3>
+            <p>Access to the hidden vault of high-resolution concepts.</p>
+            <div class="price">$15 / month</div>
+            <button class="inquire-btn" onclick="window.location.href='contact.html'">Inquire</button>
+        </div>
+    </div>
+
+    <div class="upload-section">
+        <h2 class="upload-header">Submit to the Market</h2>
+        <p class="subtitle">Have a concept or item to sell? Upload it here for the NetherKing and the Group's review.</p>
+        
+        <textarea id="market-text" rows="4" placeholder="Describe your item, offer, or request..."></textarea>
+        <input type="file" id="contact-image" accept="image/png, image/jpeg, image/webp, video/mp4, video/webm">
+        
+        <button id="submit-btn">Submit to Telegram Group</button>
+        <div id="status"></div>
+    </div>
+
+    <script src="js/marketplace.js"></script>
+</body>
+</html>

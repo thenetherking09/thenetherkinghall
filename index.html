@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Netherking's Hall</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="nexus-body">
+    <div class="bg-veil"></div>
+    <canvas id="particle-canvas"></canvas>
+    <div id="occult-cursor"></div>
+    <audio id="bg-audio" loop src="bg/ambient-drone.mp3"></audio>
+    
+    <div id="dashboard-wrapper">
+        
+        <aside class="dashboard-sidebar" id="sidebar-left">
+            <div class="lore-text">
+                ETERNITY IS A CIRCLE.<br><br>
+                THE NETHERKING WATCHES.<br><br>
+                BIND YOUR SOUL.<br><br>
+                THE CLEAVE DEMANDS TRIBUTE.
+            </div>
+        </aside>
+
+        <main id="dashboard-center">
+            <header class="nexus-header">
+                <p id="time-greeting">THE ARCHIVES LIE DORMANT.</p>
+                <h1 id="main-title" data-text="NEXUS OF NETHER KING HALL">∆‡Ω⚚⊗ ‡⚚</h1>
+                <p id="signet-display" title="Click to re-bind your soul">THE ARCHIVE RECOGNIZES: ...</p>
+            </header>
+
+            <div id="portal-grid">
+                <a href="gallery.html" class="portal-card" id="portal-archive" data-text="ARCHIVE OF THE HELLISH SOULS">
+                    <span class="portal-text">∆‡Ω⚚⊗</span>
+                </a>
+                <a href="chat.html" class="portal-card" id="portal-oracle" data-text="MESSENGER OF NETHERWORLD">
+                    <span class="portal-text">⊗Ω‡ ∆‡</span>
+                </a>
+                <a href="marketplace.html" class="portal-card" id="portal-void" data-text="VOID OF EXCHANGE">
+                    <span class="portal-text">⚚⊗ ‡⚚</span>
+                </a>
+                <a href="contact.html" class="portal-card" id="portal-summon" data-text="SUMMON THE NETHERKING">
+                    <span class="portal-text">∆‡Ω⚚</span>
+                </a>
+            </div>
+        </main>
+
+        <aside class="dashboard-sidebar" id="sidebar-right">
+            <div id="cryptic-whispers">
+                The Oracle favors those with high Willpower...
+            </div>
+        </aside>
+
+    </div>
+
+    <div id="global-controls">
+        <button id="toggle-audio" class="interactive">🔇 SEAL AUDIO</button>
+    </div>
+
+    <div id="name-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h2>IDENTIFY THYSELF</h2>
+            <p>Enter your signet to be recognized by the archive.</p>
+            <input type="text" id="name-input" placeholder="Your Name..." autocomplete="off">
+            <button id="submit-name-btn">BIND SOUL</button>
+        </div>
+    </div>
+
+    <script src="js/global.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

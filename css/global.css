@@ -1,0 +1,77 @@
+/* =========================================
+   GLOBAL VARIABLES & RESETS
+   ========================================= */
+:root {
+    --bg-void: #050505;
+    --text-primary: #f2e3c6;
+    --blood-red: #9e0b0f;
+    --accent-gold: #d4af37;
+    --font-heading: 'Cinzel', serif;
+    --font-ui: 'Courier New', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
+
+body {
+    background-color: var(--bg-void);
+    color: var(--text-primary);
+    font-family: var(--font-ui);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Global Background Setup */
+.page-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: -2; /* Behind particles */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* This makes the background visible but dark enough to read text */
+    filter: brightness(0.3) contrast(1.1); 
+}
+
+#particle-canvas {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none;
+}
+
+#occult-cursor {
+    position: fixed; width: 8px; height: 8px; background-color: var(--blood-red); border-radius: 50%;
+    pointer-events: none; transform: translate(-50%, -50%); z-index: 9999;
+    box-shadow: 0 0 10px var(--blood-red); transition: transform 0.1s ease-out;
+}
+
+body.hover-active #occult-cursor {
+    transform: translate(-50%, -50%) scale(2); background-color: var(--accent-gold); box-shadow: 0 0 15px var(--accent-gold);
+}
+
+/* =========================================
+   GLOBAL UI CONTROLS 
+   ========================================= */
+#global-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 100;
+}
+
+#global-controls button {
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    padding: 10px 20px;
+    font-family: var(--font-ui);
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+    transition: all 0.3s ease;
+}
+
+#global-controls button:hover {
+    border-color: var(--blood-red);
+    color: var(--blood-red);
+    text-shadow: 0 0 8px var(--blood-red);
+}

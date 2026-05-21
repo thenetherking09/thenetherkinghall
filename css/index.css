@@ -1,0 +1,202 @@
+/* Legacy Background Styling */
+.nexus-body {
+    background: #000 url('../bg/index-bg.webp') center/cover no-repeat fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.bg-veil {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5); z-index: 1; pointer-events: none;
+}
+
+/* =========================================
+   THE DASHBOARD GRID
+   ========================================= */
+#dashboard-wrapper {
+    position: relative;
+    z-index: 10;
+    width: 96vw;
+    height: 92vh;
+    max-width: 1600px;
+    display: grid;
+    grid-template-columns: 15% 1fr 15%; 
+    gap: 20px;
+    align-items: center;
+}
+
+/* SIDEBARS */
+.dashboard-sidebar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: left;
+}
+
+.lore-text, #cryptic-whispers {
+    color: rgba(212, 175, 55, 0.4); 
+    font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+    letter-spacing: 3px;
+    line-height: 1.8;
+    text-transform: uppercase;
+    transition: color 0.5s ease;
+}
+
+.dashboard-sidebar:hover .lore-text, 
+.dashboard-sidebar:hover #cryptic-whispers {
+    color: rgba(212, 175, 55, 1);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+#sidebar-right { text-align: right; }
+
+/* CENTER ZONE */
+#dashboard-center {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+.nexus-header { text-align: center; margin-bottom: 2vh; }
+#main-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 5vw, 4.5rem); 
+    letter-spacing: clamp(4px, 1vw, 12px); 
+    line-height: 1.1;
+    color: var(--text-primary);
+    text-shadow: 0 0 20px rgba(0,0,0,1);
+    text-transform: uppercase;
+}
+#signet-display {
+    color: var(--accent-gold); font-style: italic; font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    margin-top: 5px; letter-spacing: 2px; transition: 0.3s; cursor: pointer;
+}
+#signet-display:hover {
+    color: #fff; text-shadow: 0 0 10px var(--accent-gold);
+}
+
+/* =========================================
+   THE 2x2 PORTAL GRID & POP-OUT EFFECT
+   ========================================= */
+#portal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: clamp(15px, 2vw, 30px); 
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.portal-card {
+    text-decoration: none;
+    background: #030303; 
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    aspect-ratio: 16 / 9; 
+    position: relative;
+    overflow: visible; 
+    transition: all 0.4s ease;
+}
+
+.portal-text {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 90%; z-index: 10; color: var(--text-primary);
+    font-size: clamp(0.8rem, 2.5vw, 1.5rem); letter-spacing: 2px;
+    text-align: center; text-shadow: 0 0 10px #000, 0 0 30px rgba(0,0,0,0.9);
+    text-transform: uppercase; font-weight: bold; line-height: 1.4;
+    pointer-events: none; 
+}
+
+.portal-card::after {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0; 
+    z-index: 5;
+    background-size: 100% 100%; 
+    background-position: center; background-repeat: no-repeat;
+    transform: scale(1);
+    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: brightness(0.9);
+    border: 1px solid transparent; 
+}
+
+.portal-card:hover, .portal-card:active {
+    border-color: transparent; 
+    z-index: 100; 
+}
+
+.portal-card:hover::after, .portal-card:active::after { 
+    opacity: 1; 
+    transform: scale(1.33); 
+    border-color: var(--blood-red);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.9), 0 0 20px rgba(138, 3, 3, 0.6);
+}
+
+#portal-oracle::after { background: radial-gradient(circle at 50% 50%, #444, #000); } 
+#portal-void::after { background: #111; } 
+#portal-summon::after { background: linear-gradient(to bottom, rgba(138, 3, 3, 0.8), #000); } 
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 900px) {
+    #dashboard-wrapper {
+        grid-template-columns: 1fr; 
+        height: auto;
+        padding: 20px 10px 80px 10px;
+        gap: 15px;
+    }
+    
+    #sidebar-left { order: -1; text-align: center; padding: 0; } 
+    #dashboard-center { order: 0; }
+    #sidebar-right { order: 1; text-align: center; padding: 0; }
+
+    .lore-text br { display: none; }
+    .lore-text { display: inline-block; font-size: 0.65rem; letter-spacing: 2px; color: rgba(212, 175, 55, 0.7); }
+    #cryptic-whispers { font-size: 0.65rem; }
+    .portal-card { aspect-ratio: 1 / 1; }
+}
+
+@media (max-width: 400px) {
+    #portal-grid { gap: 15px; }
+    .portal-text { font-size: 0.8rem; }
+}
+
+/* =========================================
+   IDENTIFICATION MODAL
+   ========================================= */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85); z-index: 9999;
+    display: flex; justify-content: center; align-items: center;
+    backdrop-filter: blur(5px);
+}
+.modal-content {
+    background: #0a0a0a; border: 1px solid var(--blood-red);
+    padding: 40px; border-radius: 8px; text-align: center;
+    box-shadow: 0 0 30px rgba(138, 3, 3, 0.5);
+    max-width: 400px; width: 90%;
+}
+.modal-content h2 { 
+    color: var(--blood-red); font-family: var(--font-heading); 
+    margin-top: 0; letter-spacing: 2px; text-transform: uppercase;
+}
+.modal-content p { color: #aaa; font-size: 0.9rem; margin-bottom: 20px; }
+.modal-content input {
+    width: 100%; padding: 12px; background: #000; border: 1px solid #333;
+    color: var(--accent-gold); text-align: center; font-family: monospace;
+    font-size: 1.2rem; box-sizing: border-box; margin-bottom: 20px; outline: none;
+}
+.modal-content input:focus { border-color: var(--accent-gold); }
+.modal-content button {
+    width: 100%; padding: 12px; background: var(--blood-red); color: #fff;
+    border: none; border-radius: 4px; font-weight: bold; cursor: pointer; 
+    letter-spacing: 2px; text-transform: uppercase; transition: 0.3s;
+}
+.modal-content button:hover { background: #b30000; }
+    

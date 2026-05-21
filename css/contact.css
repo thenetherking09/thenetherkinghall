@@ -1,0 +1,84 @@
+body {
+    background: #050505;
+    color: #eee;
+    font-family: var(--font-body);
+    text-align: center;
+    padding: 20px;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #111;
+    padding: 30px;
+    border: 1px solid var(--blood-red);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(138, 3, 3, 0.3);
+}
+h1 {
+    color: var(--blood-red);
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+    letter-spacing: 2px;
+}
+.social-links {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.social-links a {
+    background: #222;
+    color: var(--accent-gold);
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1px solid var(--accent-gold);
+    border-radius: 4px;
+    transition: 0.3s;
+}
+.social-links a:hover {
+    background: var(--accent-gold);
+    color: #000;
+}
+.divider {
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 30px 0;
+}
+.subtitle {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+textarea, input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #000;
+    border: 1px solid #333;
+    color: #eee;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px;
+    background: var(--blood-red);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+button:hover {
+    background: #b30000;
+}
+button:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
+#status {
+    margin-top: 15px;
+    font-weight: bold;
+}

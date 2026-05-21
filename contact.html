@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact the NetherKing</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contact the Realm</h1>
+        
+        <div class="social-links">
+            <a href="https://t.me/YourTelegramUsername" target="_blank">Direct Telegram</a>
+            <a href="https://facebook.com/YourFacebook" target="_blank">Direct Facebook</a>
+        </div>
+
+        <hr class="divider">
+
+        <h3>Send a Direct Request</h3>
+        <p class="subtitle">Upload an image or describe what you desire. The NetherKing will receive it immediately.</p>
+        
+        <textarea id="contact-text" rows="5" placeholder="Describe your request..."></textarea>
+        <input type="file" id="contact-image" accept="image/png, image/jpeg, image/webp, video/mp4, video/webm">
+        
+        <button id="submit-btn">Send to the NetherKing</button>
+        <div id="status"></div>
+    </div>
+
+    <script src="js/contact.js"></script>
+</body>
+</html>
