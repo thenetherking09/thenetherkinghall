@@ -28,7 +28,8 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
                     window.open('https://perchance.org/netherking-rp-oracle', '_blank');
                     commitToChatLog('system', `⚔️ <strong>ROLEPLAY PORTAL OPENED</strong><br>Return here to paste and save your generated RP.`);
                 } else if (mode === "image") {
-                    window.open('https://perchance.org/netherking-image-oracle', '_blank');
+                    // LINK UPDATED HERE
+                    window.open('https://perchance.org/image-generator-professional', '_blank');
                     commitToChatLog('system', `👁️ <strong>IMAGE PORTAL OPENED</strong><br>Download your generated vision, then use the 📎 icon below to upload it here.`);
                 } else {
                     window.open('https://perchance.org/netherking-story-oracle', '_blank');
@@ -344,5 +345,5 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
             renderRelics(); 
         }
     });
-                                }
-                    
+            }
+            
