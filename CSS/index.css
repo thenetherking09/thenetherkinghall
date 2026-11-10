@@ -1,0 +1,23 @@
+.hero-section {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle, #1f2833 0%, #0b0c10 100%);
+}
+.hero-content h1 {
+    font-size: 3rem;
+    color: #66fcf1;
+    margin-bottom: 1rem;
+}
+.cta-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.8rem;
+    background: #45a29e;
+    color: #0b0c10;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}

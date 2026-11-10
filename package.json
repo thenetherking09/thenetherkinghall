@@ -1,0 +1,10 @@
+{
+  "name": "the-netherking-hall",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "serve -s .",
+    "build": "echo 'No build step required for static site'"
+  },
+  "dependencies": {}
+}

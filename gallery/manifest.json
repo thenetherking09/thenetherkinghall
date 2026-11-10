@@ -1,0 +1,25 @@
+{
+  "generated": true,
+  "highlightRule": "OTM >= 286",
+  "images": [
+    {
+      "id": "otm-23",
+      "category": "OTM",
+      "number": 23,
+      "file": "/gallery/OTM/23.webp",
+      "fallback": "/gallery/OTM/23.jpg",
+      "title": "OTM 23",
+      "tags": []
+    },
+    {
+      "id": "otm-286",
+      "category": "OTM",
+      "number": 286,
+      "file": "/gallery/OTM/286.webp",
+      "fallback": "/gallery/OTM/286.jpg",
+      "title": "OTM 286",
+      "tags": [],
+      "highlight": true
+    }
+  ]
+}
